@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ModelPlaceholder } from "./ModelPlaceholder";
 import { formatPrice, plural } from "@/lib/format";
+import { withBasePath } from "@/lib/base-path";
 import type { HouseModel } from "@/content/models";
 
 export function ModelCard({ model }: { model: HouseModel }) {
@@ -14,7 +15,7 @@ export function ModelCard({ model }: { model: HouseModel }) {
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         {model.image ? (
           <Image
-            src={model.image}
+            src={withBasePath(model.image)}
             alt={`Проект «${model.name}», ${model.area} м²`}
             fill
             sizes="(min-width: 1024px) 380px, 90vw"

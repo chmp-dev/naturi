@@ -10,6 +10,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { getModel, models } from "@/content/models";
 import { calculator, company } from "@/content/site";
 import { formatPrice, plural } from "@/lib/format";
+import { withBasePath } from "@/lib/base-path";
 
 type Params = { slug: string };
 
@@ -66,7 +67,7 @@ export default async function ModelPage({
           >
             {model.image ? (
               <Image
-                src={model.image}
+                src={withBasePath(model.image)}
                 alt={`Дом «${model.name}», ${model.area} м²`}
                 fill
                 sizes="(min-width: 1024px) 640px, 92vw"
