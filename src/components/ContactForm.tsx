@@ -73,7 +73,7 @@ export function ContactForm({ modelName }: { modelName?: string }) {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="cursor-pointer text-[15px] font-medium text-pine hover:text-pine-strong"
+          className="cursor-pointer text-[15px] font-medium text-coral-deep hover:text-coral-deep-strong"
         >
           Отправить ещё одну заявку
         </button>

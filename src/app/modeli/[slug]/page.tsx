@@ -59,7 +59,11 @@ export default async function ModelPage({
 
       <section>
         <Container className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-start">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div
+            className={`relative overflow-hidden rounded-2xl ${
+              model.image ? "aspect-[16/9]" : "aspect-[4/3]"
+            }`}
+          >
             {model.image ? (
               <Image
                 src={model.image}
@@ -103,14 +107,16 @@ export default async function ModelPage({
                 {formatPrice(model.price)}
               </p>
               <p className="mt-1 text-[13px] text-ink-faint">{calculator.note}</p>
-              <a
-                href={model.source}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="mt-4 inline-block text-[14px] font-medium text-pine hover:text-pine-strong"
-              >
-                Проект на naturi.su
-              </a>
+              {model.source && (
+                <a
+                  href={model.source}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-4 inline-block text-[14px] font-medium text-coral-deep hover:text-coral-deep-strong"
+                >
+                  Проект на naturi.su
+                </a>
+              )}
             </div>
           </div>
         </Container>

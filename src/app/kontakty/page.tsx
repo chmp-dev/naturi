@@ -39,9 +39,9 @@ export default function ContactsPage() {
               <li>
                 <a
                   href={`mailto:${company.email}`}
-                  className="flex items-center gap-3 text-[16px] text-ink transition-colors duration-200 hover:text-pine"
+                  className="flex items-center gap-3 text-[16px] text-ink transition-colors duration-200 hover:text-coral-deep"
                 >
-                  <Mail className="h-5 w-5 text-pine" aria-hidden />
+                  <Mail className="h-5 w-5 text-coral-deep" aria-hidden />
                   {company.email}
                 </a>
               </li>
@@ -50,9 +50,9 @@ export default function ContactsPage() {
                   href={company.telegram}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="flex items-center gap-3 text-[16px] text-ink transition-colors duration-200 hover:text-pine"
+                  className="flex items-center gap-3 text-[16px] text-ink transition-colors duration-200 hover:text-moss"
                 >
-                  <Send className="h-5 w-5 text-pine" aria-hidden />
+                  <Send className="h-5 w-5 text-moss" aria-hidden />
                   Написать в Telegram
                 </a>
               </li>

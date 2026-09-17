@@ -59,7 +59,7 @@ export function Header() {
         <div className="hidden shrink-0 items-center gap-5 lg:flex">
           <a
             href={`tel:${company.phoneHref}`}
-            className="flex items-center gap-2 whitespace-nowrap text-[15px] font-medium text-ink hover:text-pine transition-colors duration-200"
+            className="flex items-center gap-2 whitespace-nowrap text-[15px] font-medium text-ink hover:text-coral-deep transition-colors duration-200"
           >
             <Phone className="h-4 w-4" aria-hidden />
             {company.phone}

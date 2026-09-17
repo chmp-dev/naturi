@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 type CommonProps = {
   children: ReactNode;
-  variant?: "primary" | "onDark" | "secondary" | "ghost";
+  variant?: "primary" | "accent" | "onDark" | "secondary";
   className?: string;
 };
 
@@ -12,10 +12,10 @@ const base =
 
 const variants: Record<NonNullable<CommonProps["variant"]>, string> = {
   primary: "bg-pine text-bg hover:bg-pine-strong",
+  accent: "bg-coral text-ink hover:bg-coral-strong",
   onDark: "bg-ink-dark-fg text-ink-dark-bg hover:bg-white",
   secondary:
     "border border-ink/20 text-ink hover:border-ink/40 hover:bg-ink/[0.04]",
-  ghost: "text-ink-dark-fg hover:text-coral",
 };
 
 export function Button({

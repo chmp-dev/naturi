@@ -8,13 +8,15 @@ export type HouseModel = {
   bathrooms: number;
   price: number;
   tone: string;
-  /** Страница проекта на naturi.su */
-  source: string;
+  /** Страница проекта на naturi.su — не задана у придуманных моделей */
+  source?: string;
   /** Путь к фото; пока не задан — используется генеративная заглушка */
   image?: string;
 };
 
-// Популярные проекты с naturi.su (цены и параметры — оттуда же)
+// Комфорт и Лавант — реальные проекты с naturi.su (цены и параметры оттуда).
+// Заимка, Просека, Опушка и Взгорье — придуманные модели под готовые визуализации,
+// поэтому у них нет ссылки на страницу-первоисточник.
 export const models: HouseModel[] = [
   {
     slug: "komfort",
@@ -29,8 +31,8 @@ export const models: HouseModel[] = [
     source: "https://naturi.su/product/komfort",
   },
   {
-    slug: "hard",
-    name: "Хард",
+    slug: "zaimka",
+    name: "Заимка",
     area: 87,
     terrace: 38,
     floors: 1,
@@ -38,7 +40,7 @@ export const models: HouseModel[] = [
     bathrooms: 1,
     price: 8_490_000,
     tone: "#b58a55",
-    source: "https://naturi.su/product/hard-2",
+    image: "/projects/hard/1.webp",
   },
   {
     slug: "lavant",
@@ -53,8 +55,8 @@ export const models: HouseModel[] = [
     source: "https://naturi.su/product/lavant",
   },
   {
-    slug: "grac",
-    name: "Грац",
+    slug: "proseka",
+    name: "Просека",
     area: 248,
     terrace: 87,
     floors: 1,
@@ -62,11 +64,11 @@ export const models: HouseModel[] = [
     bathrooms: 4,
     price: 26_680_000,
     tone: "#5b4326",
-    source: "https://naturi.su/product/gracz",
+    image: "/projects/grac/1.webp",
   },
   {
-    slug: "norvezhskij-3",
-    name: "Норвежский 3",
+    slug: "opushka",
+    name: "Опушка",
     area: 98,
     terrace: 25,
     floors: 1,
@@ -74,11 +76,11 @@ export const models: HouseModel[] = [
     bathrooms: 2,
     price: 8_890_000,
     tone: "#a9793a",
-    source: "https://naturi.su/product/norvezhskij-dom-3",
+    image: "/projects/norvezhskij-3/1.webp",
   },
   {
-    slug: "alpijskoe-shale",
-    name: "Альпийское Шале",
+    slug: "vzgorye",
+    name: "Взгорье",
     area: 160,
     terrace: 79,
     floors: 1,
@@ -86,7 +88,7 @@ export const models: HouseModel[] = [
     bathrooms: 2,
     price: 13_980_000,
     tone: "#77603c",
-    source: "https://naturi.su/product/alpijskoe-shale",
+    image: "/projects/alpijskoe-shale/1.webp",
   },
 ];
 

@@ -20,6 +20,10 @@
   --pine: #2f4a3a;
   --pine-strong: #213629;
   --coral: #ff8156;
+  --coral-strong: #e8703f;
+  /* Затемнённый коралл — единственный, который проходит контраст как текст/ссылка на светлом фоне */
+  --coral-deep: #b8472a;
+  --coral-deep-strong: #953a22;
   --moss: #3f5b47;
   --moss-strong: #2f4636;
   --moss-soft: #6c8a62;
@@ -47,6 +51,9 @@
   --color-pine: var(--pine);
   --color-pine-strong: var(--pine-strong);
   --color-coral: var(--coral);
+  --color-coral-strong: var(--coral-strong);
+  --color-coral-deep: var(--coral-deep);
+  --color-coral-deep-strong: var(--coral-deep-strong);
   --color-moss: var(--moss);
   --color-moss-strong: var(--moss-strong);
   --color-moss-soft: var(--moss-soft);

@@ -35,7 +35,7 @@ export function ModelCard({ model }: { model: HouseModel }) {
       <div className="p-6">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="font-display text-xl text-ink">{model.name}</h3>
-          <span className="whitespace-nowrap text-[15px] font-medium text-pine">
+          <span className="whitespace-nowrap text-[15px] font-medium text-coral-deep">
             {formatPrice(model.price)}
           </span>
         </div>

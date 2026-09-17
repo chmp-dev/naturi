@@ -42,7 +42,7 @@ export default function Home() {
                 {hero.primaryCta.label}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href={hero.secondaryCta.href} variant="ghost" className="border border-ink-dark-line">
+              <Button href={hero.secondaryCta.href} variant="accent">
                 {hero.secondaryCta.label}
               </Button>
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
             </h2>
             <Link
               href="/o-nas#tehnologiya"
-              className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-medium text-ink transition-colors duration-200 hover:text-pine"
+              className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-medium text-ink transition-colors duration-200 hover:text-coral-deep"
             >
               Подробнее о технологии
               <ArrowRight className="h-4 w-4" aria-hidden />
@@ -129,7 +129,7 @@ export default function Home() {
             </h2>
             <Link
               href="/modeli"
-              className="inline-flex items-center gap-1.5 text-[15px] font-medium text-ink transition-colors duration-200 hover:text-pine"
+              className="inline-flex items-center gap-1.5 text-[15px] font-medium text-ink transition-colors duration-200 hover:text-coral-deep"
             >
               Перейти в каталог
               <ArrowRight className="h-4 w-4" aria-hidden />
@@ -203,7 +203,7 @@ export default function Home() {
                   {item.q}
                   <span
                     aria-hidden
-                    className="shrink-0 text-xl text-pine transition-transform duration-200 group-open:rotate-45"
+                    className="shrink-0 text-xl text-coral-deep transition-transform duration-200 group-open:rotate-45"
                   >
                     +
                   </span>
