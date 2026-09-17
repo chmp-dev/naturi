@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { ModelCard } from "@/components/ModelCard";
-import { GrowthRings } from "@/components/GrowthRings";
+import { LamellaJoint } from "@/components/LamellaJoint";
 import { EcologySection } from "@/components/EcologySection";
 import {
   ctaBanner,
@@ -64,10 +64,10 @@ export default function Home() {
             </dl>
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-[420px] text-ink-dark-fg/90 lg:max-w-none">
-            <GrowthRings className="h-full w-full" />
-            <p className="absolute bottom-0 left-1/2 w-52 -translate-x-1/2 translate-y-6 text-center text-[12.5px] leading-snug text-ink-dark-muted lg:left-auto lg:right-0 lg:translate-x-0 lg:text-right">
-              Сектор из спила встаёт в стену вертикально — так, как рос
+          <div className="relative mx-auto w-full max-w-[480px] lg:max-w-none">
+            <LamellaJoint className="h-auto w-full" />
+            <p className="mt-4 text-center text-[12.5px] leading-snug text-ink-dark-muted lg:text-right">
+              Профиль ламели Naturi: элементы держат друг друга без клея и утеплителя
             </p>
           </div>
         </Container>
