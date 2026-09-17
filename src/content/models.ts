@@ -12,6 +12,8 @@ export type HouseModel = {
   source?: string;
   /** Путь к фото; пока не задан — используется генеративная заглушка */
   image?: string;
+  /** Путь к PDF с планом этажа, если он есть */
+  floorPlan?: string;
 };
 
 // Комфорт и Лавант — реальные проекты с naturi.su (цены и параметры оттуда).
@@ -88,6 +90,7 @@ export const models: HouseModel[] = [
     bathrooms: 2,
     price: 13_980_000,
     tone: "#77603c",
+    floorPlan: "/projects/vzgorye/plan.pdf",
     image: "/projects/alpijskoe-shale/1.webp",
   },
 ];

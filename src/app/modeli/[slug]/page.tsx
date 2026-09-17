@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, FileText } from "lucide-react";
 import { Container } from "@/components/Container";
 import { ModelPlaceholder } from "@/components/ModelPlaceholder";
 import { ModelCard } from "@/components/ModelCard";
@@ -101,6 +101,21 @@ export default async function ModelPage({
                 </div>
               ))}
             </dl>
+
+            {model.floorPlan && (
+              <a
+                href={withBasePath(model.floorPlan)}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-6 flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 transition-colors duration-200 hover:border-ink/30"
+              >
+                <FileText className="h-8 w-8 shrink-0 text-coral-deep" aria-hidden />
+                <span>
+                  <span className="block text-[15px] font-medium text-ink">План этажа</span>
+                  <span className="block text-[13px] text-ink-faint">PDF, планировка и размеры комнат</span>
+                </span>
+              </a>
+            )}
 
             <div className="mt-8 rounded-2xl border border-line bg-bg-soft p-6">
               <p className="text-[13px] uppercase tracking-[0.06em] text-ink-faint">Стоимость проекта</p>
