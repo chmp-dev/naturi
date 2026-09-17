@@ -12,7 +12,7 @@ export type HouseModel = {
   source?: string;
   /** Путь к фото; пока не задан — используется генеративная заглушка */
   image?: string;
-  /** Путь к PDF с планом этажа, если он есть */
+  /** Путь к изображению плана этажа, если он есть */
   floorPlan?: string;
 };
 
@@ -90,7 +90,7 @@ export const models: HouseModel[] = [
     bathrooms: 2,
     price: 13_980_000,
     tone: "#77603c",
-    floorPlan: "/projects/vzgorye/plan.pdf",
+    floorPlan: "/projects/vzgorye/plan.webp",
     image: "/projects/alpijskoe-shale/1.webp",
   },
 ];
