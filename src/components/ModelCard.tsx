@@ -12,13 +12,13 @@ export function ModelCard({ model }: { model: HouseModel }) {
       href={`/modeli/${model.slug}`}
       className="group block overflow-hidden rounded-2xl border border-line bg-surface transition-shadow duration-300 hover:shadow-[0_18px_48px_-24px_rgba(34,29,22,0.35)]"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden">
+      <div className="relative aspect-[3/2] w-full overflow-hidden">
         {model.image ? (
           <Image
             src={withBasePath(model.image)}
             alt={`Проект «${model.name}», ${model.area} м²`}
             fill
-            sizes="(min-width: 1024px) 380px, 90vw"
+            sizes="(min-width: 1024px) 580px, 90vw"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           />
         ) : (
