@@ -67,7 +67,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-[480px] lg:max-w-none">
             <LamellaJoint className="h-auto w-full" />
             <p className="mt-4 text-center text-[12.5px] leading-snug text-ink-dark-muted lg:text-right">
-              Профиль ламели Naturi: элементы держат друг друга без клея и утеплителя
+              Каждая ламель заезжает в паз соседней — так, венец за венцом, собирается стена
             </p>
           </div>
         </Container>

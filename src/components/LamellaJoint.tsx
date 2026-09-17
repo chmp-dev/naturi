@@ -1,8 +1,9 @@
 /**
  * Сигнатурный визуал: контур торца ламели (вазообразный профиль с пазом
- * сверху/снизу и волной-крюком по бокам) и вставка-«пламя», которая
- * показывает, как элементы сцепляются между собой. Плитки собраны в
- * небольшую стену — 2×3, внахлёст, как в разрезе реальной кладки.
+ * сверху/снизу и волной-крюком по бокам). Ламели одна за другой заезжают
+ * по диагонали и защёлкиваются в паз соседней — так собирается стена,
+ * венец за венцом. Вставка-«пламя» проявляется в момент, когда две
+ * ламели сцепились.
  */
 const CELL =
   "M40,30 C40,18 48,10 62,10 L68,10 L68,24 L92,24 L92,10 L98,10 " +
@@ -22,19 +23,27 @@ const STEP_X = 122;
 const STEP_Y = 186;
 const CELL_W = 160;
 const CELL_H = 220;
+const PIECE_DURATION = 0.6;
+const PIECE_GAP = 0.45;
+const START_DELAY = 0.2;
 
 const tones = ["#c9a06a", "#b58a55", "#a67c4a", "#b58a55", "#a67c4a", "#c9a06a"];
+
+// Порядок, в котором ламели встают на место: сначала «маточная» деталь
+// в центре кладки, дальше — соседние, будто стена растёт вокруг неё.
+const order = [3, 4, 1, 0, 5, 2];
 
 export function LamellaJoint({ className = "" }: { className?: string }) {
   const width = STEP_X * (COLS - 1) + CELL_W;
   const height = STEP_Y * (ROWS - 1) + CELL_H;
+  const cells = Array.from({ length: ROWS * COLS }, (_, i) => i);
 
   return (
     <svg
       viewBox={`0 0 ${width} ${height}`}
       className={className}
       role="img"
-      aria-label="Контур торца ламели Naturi: паз сверху и снизу, волна-крюк по бокам. Ламели собраны в стену внахлёст, вставка-пламя показывает место соединения"
+      aria-label="Сборка стены Naturi: ламели по очереди заезжают по диагонали и защёлкиваются пазом в соседнюю — венец за венцом"
     >
       <defs>
         <linearGradient id="lamella-grain" x1="0" y1="0" x2="1" y2="0.15">
@@ -44,24 +53,35 @@ export function LamellaJoint({ className = "" }: { className?: string }) {
         </linearGradient>
       </defs>
 
-      {Array.from({ length: ROWS }).map((_, row) =>
-        Array.from({ length: COLS }).map((_, col) => {
-          const index = row * COLS + col;
-          const tone = tones[index % tones.length];
-          return (
-            <g key={`${row}-${col}`} transform={`translate(${col * STEP_X} ${row * STEP_Y})`}>
+      {cells.map((index) => {
+        const row = Math.floor(index / COLS);
+        const col = index % COLS;
+        const tone = tones[index % tones.length];
+        const seq = order.indexOf(index);
+        const pieceDelay = START_DELAY + seq * PIECE_GAP;
+        const flameDelay = pieceDelay + PIECE_DURATION * 0.7;
+
+        return (
+          <g key={index} transform={`translate(${col * STEP_X} ${row * STEP_Y})`}>
+            <g
+              className="joint-piece"
+              style={{
+                animationDelay: `${pieceDelay}s`,
+                animationDuration: `${PIECE_DURATION}s`,
+              }}
+            >
               <path d={CELL} fill={tone} stroke="#5b4326" strokeWidth="1.5" strokeLinejoin="round" />
               <path d={CELL} fill="url(#lamella-grain)" />
-              <path
-                d={FLAME}
-                className="fill-coral joint-flame"
-                transform="translate(60 80)"
-                style={{ animationDelay: `${0.3 + index * 0.08}s` }}
-              />
             </g>
-          );
-        })
-      )}
+            <path
+              d={FLAME}
+              className="fill-coral joint-flame"
+              transform="translate(60 80)"
+              style={{ animationDelay: `${flameDelay}s` }}
+            />
+          </g>
+        );
+      })}
     </svg>
   );
 }
