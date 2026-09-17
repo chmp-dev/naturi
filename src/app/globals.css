@@ -82,44 +82,6 @@
 
 }
 
-/* Ламель заезжает по диагонали и встаёт в кладку — один раз при загрузке */
-.joint-piece {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation-name: piece-in;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  animation-fill-mode: both;
-}
-
-@keyframes piece-in {
-  from {
-    opacity: 0;
-    transform: translate(64px, -78px) rotate(-6deg);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
-/* Вставка-«пламя» проявляется в пазу, когда ламель встала на место */
-.joint-flame {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: flame-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes flame-in {
-  from {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
