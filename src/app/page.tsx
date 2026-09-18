@@ -67,7 +67,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-[480px] lg:max-w-none">
             <WallAssemblyVideo className="h-auto w-full rounded-2xl border border-ink-dark-line" />
             <p className="mt-4 text-center text-[12.5px] leading-snug text-ink-dark-muted lg:text-right">
-              Паз одной ламели входит в паз следующей — так венец держит венец, без клея
+              Паз одной детали входит в паз следующей — так собирается стена Naturi
             </p>
           </div>
         </Container>
