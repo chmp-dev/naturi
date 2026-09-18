@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { ModelCard } from "@/components/ModelCard";
-import { AssemblyVideo } from "@/components/AssemblyVideo";
+import { LamellaWall } from "@/components/LamellaWall";
 import { EcologySection } from "@/components/EcologySection";
 import {
   ctaBanner,
@@ -65,9 +65,9 @@ export default function Home() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[480px] lg:max-w-none">
-            <AssemblyVideo className="h-auto w-full rounded-2xl border border-ink-dark-line" />
+            <LamellaWall className="h-auto w-full" />
             <p className="mt-4 text-center text-[12.5px] leading-snug text-ink-dark-muted lg:text-right">
-              Каждая ламель заезжает в паз соседней — так, венец за венцом, собирается стена
+              Паз одной ламели входит в паз следующей — так венец держит венец, без клея
             </p>
           </div>
         </Container>
